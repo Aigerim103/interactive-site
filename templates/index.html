@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Send us your feedback</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <textarea name="message" placeholder="Your Message" required></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if user_data %}
+        <div class="result">
+            <h2>Thanks, {{ user_data.name }}!</h2>
+            <p>Your message: {{ user_data.message }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
